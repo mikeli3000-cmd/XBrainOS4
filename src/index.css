@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-border: #E5E5E5;
+  --color-accent: #FF4E00;
+  --color-text-primary: #171717;
+  --color-text-dim: #737373;
+  --font-mono: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-surface/80 backdrop-blur-md border border-border;
+}
+
+.btn-primary {
+  @apply bg-accent text-white px-4 py-2 rounded-sm font-medium hover:opacity-90 transition-opacity;
+}
+
+.btn-secondary {
+  @apply border border-border px-4 py-2 rounded-sm font-medium hover:bg-black/5 transition-colors;
+}
+
+.card {
+  @apply bg-surface border border-border rounded-sm p-4 shadow-sm;
+}
+
+.mono {
+  @apply font-mono text-[11px] tracking-tight;
+}
+
+.label-micro {
+  @apply text-[10px] uppercase tracking-widest text-text-dim font-semibold;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E5E5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4D4D4;
+}
